@@ -1,0 +1,27 @@
+.container {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), pink;
+  text-align: center;
+  animation: color-change 10s ease-in-out infinite alternate;
+}
+
+@keyframes color-change {
+  0% {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), pink;
+  }
+  50% {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), purple;
+  }
+  100% {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), magenta;
+  }
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+  padding-top: 50px;
+}
+
+img {
+  max-width: 100%;
+}
