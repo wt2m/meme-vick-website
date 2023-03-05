@@ -1,7 +1,7 @@
 .container {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), pink;
   text-align: center;
-  animation: color-change 10s ease-in-out infinite alternate;
+  animation: color-change 2s ease-in-out infinite alternate;
 }
 
 @keyframes color-change {

